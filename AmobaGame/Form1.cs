@@ -21,6 +21,17 @@ namespace AmobaGame
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string player1 = textBox1.Text;
+            string player2 = textBox2.Text;
+
+            if (player1 == "")
+            {
+                player1 = "player1";
+            }
+            if (player2 == "")
+            {
+                player2 = "player2";
+            }
             Jatekter jatekter = new Jatekter();
             this.Visible = false;
             jatekter.ShowDialog();
