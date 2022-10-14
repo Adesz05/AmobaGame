@@ -20,7 +20,6 @@ namespace AmobaGame
             Katt();
             InitializeComponent();
         }
-        //szia
         private void Katt()
         {
             
