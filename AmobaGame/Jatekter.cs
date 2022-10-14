@@ -12,7 +12,8 @@ namespace AmobaGame
 {
     public partial class Jatekter : Form
     {
-        static Label[,] matrix = new Label[30, 30];
+        public int meret = 20;
+        static Label[,] matrix = new Label[20, 20];
         public Jatekter()
         {
             MatrixGeneralas();
@@ -21,9 +22,9 @@ namespace AmobaGame
 
         private void MatrixGeneralas()
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < meret; i++)
             {
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < meret; j++)
                 {
                     matrix[i, j] = new Label();
                     matrix[i, j].Parent = this;
