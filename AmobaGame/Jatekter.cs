@@ -12,8 +12,8 @@ namespace AmobaGame
 {
     public partial class Jatekter : Form
     {
-        public int meret = 20;
-        static Label[,] matrix = new Label[20, 20];
+        public static int meret = 25;
+        static Label[,] matrix = new Label[meret, meret];
         public Jatekter(string player1, string player2)
         {
             MatrixGeneralas();
@@ -29,11 +29,10 @@ namespace AmobaGame
                     matrix[i, j] = new Label();
                     matrix[i, j].Parent = this;
                     matrix[i, j].Name = i + "_" + j;
-                    matrix[i, j].Size = new Size(20, 20);
-                    matrix[i, j].Location = new Point(10 + 20 * i, 10 + 20 * j);
+                    matrix[i, j].Size = new Size(meret, meret);
+                    matrix[i, j].Location = new Point(10 + meret * i, 10 + meret * j);
                     matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
                     matrix[i, j].TextAlign = ContentAlignment.MiddleCenter;
-                    matrix[i, j].Text = "X";
                 }
             }
         }
