@@ -20,6 +20,12 @@ namespace AmobaGame
             MatrixGeneralas();
             InitializeComponent();
             Nevek(player1, player2);
+            Jatek();
+        }
+
+        private void Jatek()
+        {
+            
         }
 
         private void Nevek(string player1, string player2)
@@ -36,14 +42,25 @@ namespace AmobaGame
                 {
                     matrix[i, j] = new Label();
                     matrix[i, j].Parent = this;
-                    matrix[i, j].Name = i + "_" + j;
+                    matrix[i, j].Name = j + "_" + i;
                     matrix[i, j].Size = new Size(meret, meret);
                     matrix[i, j].Location = new Point(200 + meret * i, 10 + meret * j);
                     matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
                     matrix[i, j].TextAlign = ContentAlignment.MiddleCenter;
+                    matrix[i, j].Click += new EventHandler(Klikkeles);
                 }
             }
         }
+
+        private void Klikkeles(object sender, EventArgs e)
+        {
+            Label klikkelt = sender as Label;
+            if (true)
+            {
+
+            }
+        }
+
         private void Jatekter_Load(object sender, EventArgs e)
         {
           
