@@ -36,6 +36,8 @@ namespace AmobaGame
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 641);
+            this.MaximumSize = new System.Drawing.Size(1025, 680);
+            this.MinimumSize = new System.Drawing.Size(1025, 680);
             this.Name = "Jatekter";
             this.Text = "Jatekter";
             this.Load += new System.EventHandler(this.Jatekter_Load);
