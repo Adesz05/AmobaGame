@@ -17,7 +17,13 @@ namespace AmobaGame
         public Jatekter(string player1, string player2)
         {
             MatrixGeneralas();
+            Katt();
             InitializeComponent();
+        }
+
+        private void Katt()
+        {
+            
         }
 
         private void MatrixGeneralas()
@@ -38,7 +44,7 @@ namespace AmobaGame
         }
         private void Jatekter_Load(object sender, EventArgs e)
         {
-           
+            
         }
     }
 }
