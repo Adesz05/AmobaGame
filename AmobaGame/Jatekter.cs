@@ -13,6 +13,7 @@ namespace AmobaGame
     public partial class Jatekter : Form
     {
         public static int meret = 25;
+        public static int KiJon = 0;
         static Label[,] matrix = new Label[meret, meret];
         public Jatekter(string player1, string player2)
         {
