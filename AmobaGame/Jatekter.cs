@@ -54,7 +54,7 @@ namespace AmobaGame
         private void Klikkeles(object sender, EventArgs e)
         {
             Label klikkelt = sender as Label;
-            if (true)
+            if ()
             {
 
             }
