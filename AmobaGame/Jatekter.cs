@@ -14,7 +14,7 @@ namespace AmobaGame
     {
         public int meret = 20;
         static Label[,] matrix = new Label[20, 20];
-        public Jatekter()
+        public Jatekter(string player1, string player2)
         {
             MatrixGeneralas();
             InitializeComponent();
