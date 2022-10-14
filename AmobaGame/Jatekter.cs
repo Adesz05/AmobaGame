@@ -46,7 +46,10 @@ namespace AmobaGame
                     matrix[i, j].Size = new Size(meret, meret);
                     matrix[i, j].Location = new Point(200 + meret * i, 10 + meret * j);
                     matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
+                    matrix[i, j].Font = new Font("Arial", 16);
                     matrix[i, j].TextAlign = ContentAlignment.MiddleCenter;
+                    matrix[i, j].Padding=new Padding(3,0,0,0);
+                    matrix[i, j].Margin = new Padding(0, 0, 0, 0);
                     matrix[i, j].Click += new EventHandler(Klikkeles);
                 }
             }
@@ -55,10 +58,20 @@ namespace AmobaGame
         private void Klikkeles(object sender, EventArgs e)
         {
             Label klikkelt = sender as Label;
-            if ()
+            if (klikkelt.Text=="")
             {
-
+                if (KiJon == 0)
+                {
+                    klikkelt.Text = "X";
+                    KiJon = 1;
+                }
+                else
+                {
+                    klikkelt.Text = "O";
+                    KiJon = 0;
+                }
             }
+
         }
 
         private void Jatekter_Load(object sender, EventArgs e)
