@@ -17,12 +17,14 @@ namespace AmobaGame
         public Jatekter(string player1, string player2)
         {
             MatrixGeneralas();
-            Katt();
             InitializeComponent();
+            Nevek(player1, player2);
         }
-        private void Katt()
+
+        private void Nevek(string player1, string player2)
         {
-            
+            label1.Text = player1;
+            label2.Text = player2;
         }
 
         private void MatrixGeneralas()
@@ -43,11 +45,8 @@ namespace AmobaGame
         }
         private void Jatekter_Load(object sender, EventArgs e)
         {
-            
-        }
+          
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
         }
     }

@@ -22,7 +22,7 @@ namespace AmobaGame
         private void button1_Click(object sender, EventArgs e)
         {
             string player1 = textBox1.Text;
-            string player2 = textBox1.Text;
+            string player2 = textBox2.Text;
             if (player1.Length == 0) player1 = "Player1";
             if (player2.Length == 0) player2 = "Player2";
             

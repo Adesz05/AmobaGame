@@ -48,9 +48,9 @@ namespace AmobaGame
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(127, 227);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 23);
+            this.label1.Size = new System.Drawing.Size(201, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Első játékos neve: ";
+            this.label1.Text = "Első játékos neve:  ";
             // 
             // button1
             // 
