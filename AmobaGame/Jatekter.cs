@@ -13,7 +13,7 @@ namespace AmobaGame
     public partial class Jatekter : Form
     {
         static Label[,] matrix = new Label[30, 30];
-        public Jatekter()
+        public Jatekter(string player1, string player2)
         {
             MatrixGeneralas();
             InitializeComponent();
