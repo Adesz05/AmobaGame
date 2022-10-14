@@ -32,11 +32,9 @@ namespace AmobaGame
                     matrix[i, j].Location = new Point(10 + 20 * i, 10 + 20 * j);
                     matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
                     matrix[i, j].TextAlign = ContentAlignment.MiddleCenter;
-                    matrix[i, j].Text = "X";
                 }
             }
         }
-
         private void Jatekter_Load(object sender, EventArgs e)
         {
            
