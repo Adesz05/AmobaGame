@@ -36,7 +36,7 @@ namespace AmobaGame
                     matrix[i, j].Parent = this;
                     matrix[i, j].Name = i + "_" + j;
                     matrix[i, j].Size = new Size(meret, meret);
-                    matrix[i, j].Location = new Point(10 + meret * i, 10 + meret * j);
+                    matrix[i, j].Location = new Point(200 + meret * i, 10 + meret * j);
                     matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
                     matrix[i, j].TextAlign = ContentAlignment.MiddleCenter;
                 }
