@@ -76,9 +76,7 @@ namespace AmobaGame
 
         private void Jatekter_Load(object sender, EventArgs e)
         {
-          
-
-
+            
         }
     }
 }
