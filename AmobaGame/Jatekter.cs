@@ -31,7 +31,9 @@ namespace AmobaGame
         private void Nevek(string player1, string player2)
         {
             label1.Text = player1;
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             label2.Text = player2;
+            label2.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void MatrixGeneralas()
@@ -64,11 +66,13 @@ namespace AmobaGame
                 {
                     klikkelt.Text = "X";
                     KiJon = 1;
+                    klikkelt.ForeColor = Color.Blue;
                 }
                 else
                 {
                     klikkelt.Text = "O";
                     KiJon = 0;
+                    klikkelt.ForeColor = Color.Red;
                 }
             }
 
