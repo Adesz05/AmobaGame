@@ -120,6 +120,26 @@ namespace AmobaGame
                     xoszama = 0;
                 }
             }
+            //atlo1
+            xoszama = 0;
+            for (int i = 0; i < meret; i++)
+            {
+                if (matrix[i,i].Text == xo)
+                {
+                    xoszama++;
+                    if (xoszama == 5)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    xoszama = 0;
+                }
+
+            }
+
+
             return false;
         }
     }
