@@ -66,13 +66,13 @@ namespace AmobaGame
                 {
                     klikkelt.Text = "X";
                     KiJon = 1;
-                    klikkelt.ForeColor = Color.Blue;
+                    klikkelt.ForeColor = Color.Red;
                 }
                 else
                 {
                     klikkelt.Text = "O";
                     KiJon = 0;
-                    klikkelt.ForeColor = Color.Red;
+                    klikkelt.ForeColor = Color.Blue;
                 }
             }
 
