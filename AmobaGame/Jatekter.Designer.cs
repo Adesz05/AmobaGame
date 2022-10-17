@@ -117,7 +117,6 @@ namespace AmobaGame
             this.MinimumSize = new System.Drawing.Size(1025, 680);
             this.Name = "Jatekter";
             this.Text = "Jatekter";
-            this.Load += new System.EventHandler(this.Jatekter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

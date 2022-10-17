@@ -12,8 +12,8 @@ namespace AmobaGame
 {
     public partial class Jatekter : Form
     {
-        public static int meret = 25;
-        public static int KiJon = 0;
+        static int meret = 25;
+        static int KiJon = 0;
         static Label[,] matrix = new Label[meret, meret];
         public Jatekter(string player1, string player2)
         {
@@ -46,7 +46,7 @@ namespace AmobaGame
                     matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
                     matrix[i, j].Font = new Font("Arial", 16);
                     matrix[i, j].TextAlign = ContentAlignment.MiddleCenter;
-                    matrix[i, j].Padding=new Padding(3,0,0,0);
+                    matrix[i, j].Padding = new Padding(3, 0, 0, 0);
                     matrix[i, j].Margin = new Padding(0, 0, 0, 0);
                     matrix[i, j].Click += new EventHandler(Klikkeles);
                 }
@@ -59,34 +59,32 @@ namespace AmobaGame
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
             //MessageBox.Show("sor: " + sor.ToString() + "\noszlop: " + oszlop.ToString());
-            if (klikkelt.Text=="")
+            if (klikkelt.Text == "")
             {
                 if (KiJon == 0)
                 {
                     klikkelt.Text = "X";
                     KiJon = 1;
-                    klikkelt.ForeColor = Color.Blue;
+                    klikkelt.ForeColor = Color.Red;
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
                         MessageBox.Show("ügyi bügyi");
                     }
                 }
-                    klikkelt.ForeColor = Color.Red;
-                }
                 else
                 {
                     klikkelt.Text = "O";
                     KiJon = 0;
-                    klikkelt.ForeColor = Color.Red;
+                    klikkelt.ForeColor = Color.Blue;
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
                         MessageBox.Show("ügyi bügyi");
                     }
                 }
-                
-                
-
             }
+            
+
+
 
         }
 
@@ -127,35 +125,8 @@ namespace AmobaGame
                 {
                     xoszama = 0;
                 }
-                    klikkelt.ForeColor = Color.Blue;
-                }
-            }
-
-            }
-            //atlo1
-            xoszama = 0;
-            for (int i = 0; i < meret; i++)
-            {
-                if (matrix[i, i].Text == xo)
-                {
-                    xoszama++;
-                    if (xoszama == 5)
-                    {
-                        return true;
-                    }
-                }
-                else
-                {
-                    xoszama = 0;
-                }
-
             }
             return false;
-        }
-
-        private void Jatekter_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
