@@ -32,5 +32,11 @@ namespace AmobaGame
             jatekter.ShowDialog();
             Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string message = "A két játékos felváltva tesz egy X-et vagy egy kört bábut a táblára. A játék célja, hogy vízszintes, függőleges vagy átlós irányban megszakítás nélkül öt saját bábut sikerüljön letenni. Az ellenfél ezt a kialakulni látszó vonal végére tett bábukkal próbálja megakadályozni.";
+            MessageBox.Show(message, "Játékszabály", MessageBoxButtons.OK);
+        }
     }
 }

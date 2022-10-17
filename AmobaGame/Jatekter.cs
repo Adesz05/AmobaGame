@@ -71,6 +71,8 @@ namespace AmobaGame
                         MessageBox.Show("ügyi bügyi");
                     }
                 }
+                    klikkelt.ForeColor = Color.Red;
+                }
                 else
                 {
                     klikkelt.Text = "O";
@@ -125,6 +127,9 @@ namespace AmobaGame
                 {
                     xoszama = 0;
                 }
+                    klikkelt.ForeColor = Color.Blue;
+                }
+            }
 
             }
             //atlo1
