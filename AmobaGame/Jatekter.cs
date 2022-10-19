@@ -19,10 +19,26 @@ namespace AmobaGame
 
         private void Nevek(string player1, string player2)
         {
-            label1.Text = player1;
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Text = player2;
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            RandomKezdes(player1, player2);
+        }
+
+        private void RandomKezdes(string player1, string player2)
+        {
+            if (player1.ToLower()=="cica" || player1.ToLower() == "cicuska" || player1.ToLower() == "cicamica" || player1.ToLower() == "ciculi" || player1.ToLower() == "macsek")
+            {
+                label1.Text = player1;
+            }
+            else if (player2.ToLower() == "cica" || player2.ToLower() == "cicuska" || player2.ToLower() == "cicamica" || player2.ToLower() == "ciculi" || player2.ToLower() == "macsek")
+            {
+                label1.Text = player2;
+            }
+            else
+            {
+                label1.Text = player1;
+                label2.Text = player2;
+            }
+                label1.TextAlign = ContentAlignment.MiddleCenter;
+                label2.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void MatrixGeneralas()
