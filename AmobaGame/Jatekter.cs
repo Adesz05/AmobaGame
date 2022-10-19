@@ -14,7 +14,6 @@ namespace AmobaGame
             MatrixGeneralas();
             InitializeComponent();
             Nevek(player1, player2);
-
         }
 
 
@@ -52,45 +51,54 @@ namespace AmobaGame
             Label klikkelt = sender as Label;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
-            //MessageBox.Show("sor: " + sor.ToString() + "\noszlop: " + oszlop.ToString());
             if (klikkelt.Text == "")
             {
                 if (KiJon == 0)
                 {
+                    Xjon();
                     klikkelt.Text = "X";
                     KiJon = 1;
                     klikkelt.ForeColor = Color.Red;
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
-                        MessageBox.Show("ügyi bügyi");
+                        MessageBox.Show("Nyertél X");
                     }
                 }
                 else
                 {
+                    Ojon();
                     klikkelt.Text = "O";
                     KiJon = 0;
                     klikkelt.ForeColor = Color.Blue;
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
-                        MessageBox.Show("ügyi bügyi");
+                        MessageBox.Show("Nyertél O");
                     }
                 }
             }
+        }
 
+        private void Ojon()
+        {
+            panel1.BackColor = Color.FromArgb(125, Color.Gray);
+            panel2.BackColor = Color.FromArgb(0, Color.Gray);
+            label1.BringToFront();
+        }
 
-
-
+        private void Xjon()
+        {
+            panel2.BackColor = Color.FromArgb(125, Color.Gray);
+            panel1.BackColor = Color.FromArgb(0, Color.Gray);
+            label2.BringToFront();
         }
 
         private bool Ellenorzes(int sor, int oszlop, string xo)
         {
             int xoszama = 0;
-            //vizszintes
             for (int i = 0; i < meret; i++)
             {
                 if (matrix[sor, i].Text == xo)
                 {
-                    //MessageBox.Show(xoszama.ToString()+" "+sor.ToString()+". sorban "+i.ToString()+". oszlopban");
                     xoszama++;
                     if (xoszama == 5)
                     {
@@ -122,8 +130,9 @@ namespace AmobaGame
             }
             //atlo1
             xoszama = 0;
-            for (int i = 0; i < meret; i++)
+            for (int i =0; i < meret; i++)
             {
+
                 if (matrix[i,i].Text == xo)
                 {
                     xoszama++;
@@ -136,11 +145,15 @@ namespace AmobaGame
                 {
                     xoszama = 0;
                 }
+                sor++;
+                oszlop++;
 
             }
-
-
             return false;
         }
+
+        
+
+      
     }
 }
