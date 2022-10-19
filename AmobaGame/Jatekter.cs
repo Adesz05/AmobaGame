@@ -13,6 +13,7 @@ namespace AmobaGame
         {
             MatrixGeneralas();
             InitializeComponent();
+            Xjon();
             Nevek(player1, player2);
         }
 
@@ -71,7 +72,7 @@ namespace AmobaGame
             {
                 if (KiJon == 0)
                 {
-                    Xjon();
+                    Ojon();
                     klikkelt.Text = "X";
                     KiJon = 1;
                     klikkelt.ForeColor = Color.Red;
@@ -82,7 +83,8 @@ namespace AmobaGame
                 }
                 else
                 {
-                    Ojon();
+            
+                    Xjon();
                     klikkelt.Text = "O";
                     KiJon = 0;
                     klikkelt.ForeColor = Color.Blue;
@@ -96,20 +98,20 @@ namespace AmobaGame
 
         private void Ojon()
         {
-            panel1.BackColor = Color.FromArgb(0,Color.Black);
-            panel2.BackColor = Color.FromArgb(255, Color.White);
-            label1.BringToFront();
-            label1.Visible = true;
-            label2.Visible = false;
-        }
-
-        private void Xjon()
-        {
             panel1.BackColor = Color.FromArgb(255, Color.White);
             panel2.BackColor = Color.FromArgb(0, Color.Black);
             label2.BringToFront();
             label1.Visible = false;
             label2.Visible = true;
+        }
+
+        private void Xjon()
+        {
+            panel1.BackColor = Color.FromArgb(0, Color.Black);
+            panel2.BackColor = Color.FromArgb(255, Color.White);
+            label1.BringToFront();
+            label1.Visible = true;
+            label2.Visible = false;
         }
 
         private bool Ellenorzes(int sor, int oszlop, string xo)
