@@ -122,9 +122,56 @@ namespace AmobaGame
             }
             //atlo1
             xoszama = 0;
-            for (int i = 0; i < meret; i++)
+            int segedsor, segedoszlop;
+            if (sor>oszlop)
             {
-                if (matrix[i,i].Text == xo)
+                segedsor = sor - oszlop;
+                segedoszlop = 0;
+               
+            }
+            else if(sor<oszlop){
+                segedoszlop = oszlop - sor;
+                segedsor = 0;
+            }
+            else
+            {
+                segedoszlop = 0;
+                segedsor = 0;
+
+            }
+            if( AtloEllenorzes(segedsor, segedoszlop, xoszama, xo))
+            {
+                return true;
+            }
+            //atlo2
+            xoszama = 0;
+            if (sor+oszlop<24)
+            {
+                segedsor = 0;
+                segedoszlop = sor + oszlop;
+
+            }
+            else if (sor+oszlop>24)
+            {
+                segedoszlop = 24;
+                segedsor = oszlop+sor-segedoszlop;
+            }
+            else
+            {
+                segedoszlop = 24;
+                segedsor = 0;
+
+            }
+            return Atlo2Ellenorzes(segedsor, segedoszlop, xoszama, xo);
+
+
+        }
+
+        private bool Atlo2Ellenorzes(int segedsor, int segedoszlop, int xoszama, string xo)
+        {
+            for (int i = 0; i <Math.Abs(segedoszlop - segedsor); i++)
+            {
+                if (matrix[segedsor + i, segedoszlop - i].Text == xo)
                 {
                     xoszama++;
                     if (xoszama == 5)
@@ -136,10 +183,27 @@ namespace AmobaGame
                 {
                     xoszama = 0;
                 }
-
             }
+            return false;
+        }
 
-
+        private bool AtloEllenorzes(int segedsor, int segedoszlop, int xoszama, string xo)
+        {
+            for (int i = 0; i < meret - segedsor - segedoszlop; i++)
+            {
+                if (matrix[segedsor + i, segedoszlop + i].Text == xo)
+                {
+                    xoszama++;
+                    if (xoszama == 5)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    xoszama = 0;
+                }
+            }
             return false;
         }
     }
