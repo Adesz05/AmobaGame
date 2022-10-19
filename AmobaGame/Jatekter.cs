@@ -28,10 +28,14 @@ namespace AmobaGame
             if (player1.ToLower()=="cica" || player1.ToLower() == "cicuska" || player1.ToLower() == "cicamica" || player1.ToLower() == "ciculi" || player1.ToLower() == "macsek")
             {
                 label1.Text = player1;
+                if (player2.Length == 0) player2 = "Player2";
+                label2.Text = player2;
             }
             else if (player2.ToLower() == "cica" || player2.ToLower() == "cicuska" || player2.ToLower() == "cicamica" || player2.ToLower() == "ciculi" || player2.ToLower() == "macsek")
             {
                 label1.Text = player2;
+                if (player1.Length == 0) player1 = "Player1";
+                label2.Text = player1;
             }
             else
             {
