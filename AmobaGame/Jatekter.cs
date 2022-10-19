@@ -80,16 +80,20 @@ namespace AmobaGame
 
         private void Ojon()
         {
-            panel1.BackColor = Color.FromArgb(125, Color.Gray);
-            panel2.BackColor = Color.FromArgb(0, Color.Gray);
+            panel1.BackColor = Color.FromArgb(0,Color.Black);
+            panel2.BackColor = Color.FromArgb(255, Color.White);
             label1.BringToFront();
+            label1.Visible = true;
+            label2.Visible = false;
         }
 
         private void Xjon()
         {
-            panel2.BackColor = Color.FromArgb(125, Color.Gray);
-            panel1.BackColor = Color.FromArgb(0, Color.Gray);
+            panel1.BackColor = Color.FromArgb(255, Color.White);
+            panel2.BackColor = Color.FromArgb(0, Color.Black);
             label2.BringToFront();
+            label1.Visible = false;
+            label2.Visible = true;
         }
 
         private bool Ellenorzes(int sor, int oszlop, string xo)
@@ -151,9 +155,5 @@ namespace AmobaGame
             }
             return false;
         }
-
-        
-
-      
     }
 }

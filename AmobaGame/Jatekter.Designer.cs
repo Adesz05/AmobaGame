@@ -40,35 +40,34 @@ namespace AmobaGame
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(-1, 396);
-            this.label1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.label1.Location = new System.Drawing.Point(-1, 398);
+            this.label1.MinimumSize = new System.Drawing.Size(180, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 30);
+            this.label1.Size = new System.Drawing.Size(180, 30);
             this.label1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(824, 380);
-            this.label2.MinimumSize = new System.Drawing.Size(200, 30);
+            this.label2.Location = new System.Drawing.Point(829, 381);
+            this.label2.MinimumSize = new System.Drawing.Size(180, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 30);
+            this.label2.Size = new System.Drawing.Size(180, 30);
             this.label2.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(-5, 0);
+            this.panel1.Location = new System.Drawing.Point(-41, -20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 676);
+            this.panel1.Size = new System.Drawing.Size(269, 708);
             this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(819, 0);
+            this.panel2.Location = new System.Drawing.Point(809, -7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(205, 676);
+            this.panel2.Size = new System.Drawing.Size(200, 682);
             this.panel2.TabIndex = 5;
             // 
             // Jatekter
