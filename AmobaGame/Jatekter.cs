@@ -19,10 +19,26 @@ namespace AmobaGame
 
         private void Nevek(string player1, string player2)
         {
-            label1.Text = player1;
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Text = player2;
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            RandomKezdes(player1, player2);
+        }
+
+        private void RandomKezdes(string player1, string player2)
+        {
+            if (player1.ToLower()=="cica" || player1.ToLower() == "cicuska" || player1.ToLower() == "cicamica" || player1.ToLower() == "ciculi" || player1.ToLower() == "macsek")
+            {
+                label1.Text = player1;
+            }
+            else if (player2.ToLower() == "cica" || player2.ToLower() == "cicuska" || player2.ToLower() == "cicamica" || player2.ToLower() == "ciculi" || player2.ToLower() == "macsek")
+            {
+                label1.Text = player2;
+            }
+            else
+            {
+                label1.Text = player1;
+                label2.Text = player2;
+            }
+                label1.TextAlign = ContentAlignment.MiddleCenter;
+                label2.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void MatrixGeneralas()
@@ -134,10 +150,56 @@ namespace AmobaGame
             }
             //atlo1
             xoszama = 0;
-            for (int i =0; i < meret; i++)
+            int segedsor, segedoszlop;
+            if (sor>oszlop)
             {
+                segedsor = sor - oszlop;
+                segedoszlop = 0;
+               
+            }
+            else if(sor<oszlop){
+                segedoszlop = oszlop - sor;
+                segedsor = 0;
+            }
+            else
+            {
+                segedoszlop = 0;
+                segedsor = 0;
 
-                if (matrix[i,i].Text == xo)
+            }
+            if( AtloEllenorzes(segedsor, segedoszlop, xoszama, xo))
+            {
+                return true;
+            }
+            //atlo2
+            xoszama = 0;
+            if (sor+oszlop<24)
+            {
+                segedsor = 0;
+                segedoszlop = sor + oszlop;
+
+            }
+            else if (sor+oszlop>24)
+            {
+                segedoszlop = 24;
+                segedsor = oszlop+sor-segedoszlop;
+            }
+            else
+            {
+                segedoszlop = 24;
+                segedsor = 0;
+
+            }
+            return Atlo2Ellenorzes(segedsor, segedoszlop, xoszama, xo);
+
+
+        }
+
+        private bool Atlo2Ellenorzes(int segedsor, int segedoszlop, int xoszama, string xo)
+        {
+            for (int i = 0; i <Math.Abs(segedoszlop - segedsor); i++)
+            {
+                if (matrix[segedsor + i, segedoszlop - i].Text == xo)
                 {
                     xoszama++;
                     if (xoszama == 5)
@@ -149,9 +211,26 @@ namespace AmobaGame
                 {
                     xoszama = 0;
                 }
-                sor++;
-                oszlop++;
+            }
+            return false;
+        }
 
+        private bool AtloEllenorzes(int segedsor, int segedoszlop, int xoszama, string xo)
+        {
+            for (int i = 0; i < meret - segedsor - segedoszlop; i++)
+            {
+                if (matrix[segedsor + i, segedoszlop + i].Text == xo)
+                {
+                    xoszama++;
+                    if (xoszama == 5)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    xoszama = 0;
+                }
             }
             return false;
         }
