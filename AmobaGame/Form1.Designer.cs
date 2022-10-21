@@ -55,7 +55,7 @@ namespace AmobaGame
             // 
             this.button1.BackColor = System.Drawing.Color.CadetBlue;
             this.button1.Font = new System.Drawing.Font("Yu Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(319, 358);
+            this.button1.Location = new System.Drawing.Point(328, 358);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 64);
             this.button1.TabIndex = 1;
@@ -65,6 +65,7 @@ namespace AmobaGame
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.CadetBlue;
             this.textBox1.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox1.Location = new System.Drawing.Point(595, 72);
             this.textBox1.MaxLength = 10;
@@ -86,6 +87,7 @@ namespace AmobaGame
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.CadetBlue;
             this.textBox2.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox2.Location = new System.Drawing.Point(595, 138);
             this.textBox2.MaxLength = 10;
@@ -99,20 +101,21 @@ namespace AmobaGame
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(500, 425);
+            this.label5.Location = new System.Drawing.Point(479, 425);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(288, 16);
+            this.label5.Size = new System.Drawing.Size(309, 16);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Készítette: Kertész Krisztián, Kerék Ádám";
+            this.label5.Text = "Készítette: Kertész Krisztián és  Kerék Ádám";
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.CadetBlue;
             this.button2.Location = new System.Drawing.Point(753, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(35, 39);
             this.button2.TabIndex = 9;
             this.button2.Text = "?";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1

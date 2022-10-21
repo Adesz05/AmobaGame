@@ -63,6 +63,7 @@ namespace AmobaGame
                     matrix[i, j].Padding = new Padding(3, 0, 0, 0);
                     matrix[i, j].Margin = new Padding(0, 0, 0, 0);
                     matrix[i, j].Click += new EventHandler(Klikkeles);
+                    
                 }
             }
         }
