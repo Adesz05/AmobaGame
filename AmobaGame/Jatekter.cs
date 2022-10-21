@@ -153,6 +153,7 @@ namespace AmobaGame
             for (int i = 0; i < 5; i++)
             {
                 matrix[koordinatak[i].X,koordinatak[i].Y].BackColor = Color.Black;
+                KiJon = 0;
             }
         }
 
