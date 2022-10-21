@@ -316,12 +316,16 @@ namespace AmobaGame
 
         private void pirosFeladas_Click(object sender, EventArgs e)
         {
-
+            DialogResult valasz = MessageBox.Show(player2 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            KiJon = 0;
+            TovabbJatszik(valasz);
         }
 
         private void kekFeladas_Click(object sender, EventArgs e)
         {
-
+            DialogResult valasz = MessageBox.Show(player1 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            KiJon = 0;
+            TovabbJatszik(valasz);
         }
     }
 }
