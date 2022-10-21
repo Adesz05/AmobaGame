@@ -40,6 +40,18 @@ namespace AmobaGame
 
         private void RandomKezdes()
         {
+            Random r = new Random();
+            int r1 = r.Next(1, 3);
+            if (r1 == 1)
+            {
+                label1.Text = player1;
+                label1.Text = player2;
+            }
+            else
+            {
+                label1.Text = player2;
+                label2.Text = player1;
+            }
             if (player1.ToLower()=="cica" || player1.ToLower() == "cicuska" || player1.ToLower() == "cicamica" || player1.ToLower() == "ciculi" || player1.ToLower() == "macsek")
             {
                 label1.Text = player1;
@@ -100,7 +112,8 @@ namespace AmobaGame
                     {
                         Nyert();
                         MessageBox.Show("Nyertél X");
-                        MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult valasz = MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        TovabbJatszik(valasz);
                     }
                 }
                 else
@@ -114,9 +127,26 @@ namespace AmobaGame
                     {
                         Nyert();
                         MessageBox.Show("Nyertél O");
-                        MessageBox.Show(player1 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult valasz = MessageBox.Show(player2 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        TovabbJatszik(valasz);
                     }
                 }
+            }
+        }
+
+        private void TovabbJatszik(DialogResult valasz)
+        {
+            if (valasz == DialogResult.Yes)
+            {
+                Jatekter jatekter = new Jatekter(player1, player2);
+                this.Visible = false;
+                jatekter.ShowDialog();
+                KiJon = 0;
+                Close();
+            }
+            else
+            {
+                Close();
             }
         }
 
