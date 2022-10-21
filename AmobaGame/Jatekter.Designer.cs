@@ -32,8 +32,8 @@ namespace AmobaGame
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jatekter));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pirosFeladas = new System.Windows.Forms.Button();
+            this.kekFeladas = new System.Windows.Forms.Button();
             this.pirosAmong = new System.Windows.Forms.PictureBox();
             this.kekAmong = new System.Windows.Forms.PictureBox();
             this.pirosX = new System.Windows.Forms.PictureBox();
@@ -64,23 +64,23 @@ namespace AmobaGame
             this.label2.Size = new System.Drawing.Size(180, 30);
             this.label2.TabIndex = 3;
             // 
-            // button1
+            // pirosFeladas
             // 
-            this.button1.Location = new System.Drawing.Point(31, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 45);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Feladás";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pirosFeladas.Location = new System.Drawing.Point(31, 240);
+            this.pirosFeladas.Name = "pirosFeladas";
+            this.pirosFeladas.Size = new System.Drawing.Size(148, 45);
+            this.pirosFeladas.TabIndex = 6;
+            this.pirosFeladas.Text = "Feladás";
+            this.pirosFeladas.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // kekFeladas
             // 
-            this.button2.Location = new System.Drawing.Point(834, 240);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Feladás";
-            this.button2.UseVisualStyleBackColor = true;
+            this.kekFeladas.Location = new System.Drawing.Point(834, 240);
+            this.kekFeladas.Name = "kekFeladas";
+            this.kekFeladas.Size = new System.Drawing.Size(148, 45);
+            this.kekFeladas.TabIndex = 7;
+            this.kekFeladas.Text = "Feladás";
+            this.kekFeladas.UseVisualStyleBackColor = true;
             // 
             // pirosAmong
             // 
@@ -131,8 +131,8 @@ namespace AmobaGame
             this.Controls.Add(this.pirosX);
             this.Controls.Add(this.kekAmong);
             this.Controls.Add(this.pirosAmong);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.kekFeladas);
+            this.Controls.Add(this.pirosFeladas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(1025, 680);
@@ -151,8 +151,8 @@ namespace AmobaGame
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button pirosFeladas;
+        private System.Windows.Forms.Button kekFeladas;
         private System.Windows.Forms.PictureBox pirosAmong;
         private System.Windows.Forms.PictureBox kekAmong;
         private System.Windows.Forms.PictureBox pirosX;

@@ -18,9 +18,7 @@ namespace AmobaGame
         static Label[,] matrix = new Label[meret, meret];
         static string player1;
         static string player2;
-
-        static List<int> X = new List<int>();
-        static List<int> Y = new List<int>();
+        static List<NyeroKoordinatak> koordinatak = new List<NyeroKoordinatak>();
 
         public Jatekter(string Player1, string Player2)
         {
@@ -99,7 +97,7 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
                         Nyert();
-                        MessageBox.Show("Nyertél X");
+                        //MessageBox.Show("Nyertél X");
                         MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     }
                 }
@@ -113,7 +111,7 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
                         Nyert();
-                        MessageBox.Show("Nyertél O");
+                        //MessageBox.Show("Nyertél O");
                         MessageBox.Show(player1 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     }
                 }
@@ -124,7 +122,7 @@ namespace AmobaGame
         {
             for (int i = 0; i < 5; i++)
             {
-                matrix[X[i], Y[i]].BackColor = Color.Black;
+                matrix[koordinatak[i].X,koordinatak[i].Y].BackColor = Color.Black;
             }
         }
 
@@ -136,6 +134,8 @@ namespace AmobaGame
             pirosX.Visible = false;
             label1.Visible = false;
             label2.Visible = true;
+            kekFeladas.Visible = true;
+            pirosFeladas.Visible = false;
         }
 
         private void Xjon()
@@ -146,6 +146,8 @@ namespace AmobaGame
             pirosX.Visible = true;
             label1.Visible = true;
             label2.Visible = false;
+            kekFeladas.Visible = false;
+            pirosFeladas.Visible = true;
         }
 
         private bool Ellenorzes(int sor, int oszlop, string xo)
@@ -157,8 +159,7 @@ namespace AmobaGame
                 if (matrix[sor, i].Text == xo)
                 {
                     xoszama++;
-                    X.Add(sor);
-                    Y.Add(i);
+                    koordinatak.Add(new NyeroKoordinatak(matrix[sor,i].Name));
                     if (xoszama == 5)
                     {
                         return true;
@@ -167,8 +168,7 @@ namespace AmobaGame
                 else
                 {
                     xoszama = 0;
-                    X.Clear();
-                    Y.Clear();
+                    koordinatak.Clear();
                 }
 
             }
@@ -179,8 +179,7 @@ namespace AmobaGame
                 if (matrix[i, oszlop].Text == xo)
                 {
                     xoszama++;
-                    X.Add(i);
-                    Y.Add(oszlop);
+                    koordinatak.Add(new NyeroKoordinatak(matrix[i, oszlop].Name));
                     if (xoszama == 5)
                     {
                         return true;
@@ -189,8 +188,7 @@ namespace AmobaGame
                 else
                 {
                     xoszama = 0;
-                    X.Clear();
-                    Y.Clear();
+                    koordinatak.Clear();
                 }
             }
             //atlo1
@@ -247,8 +245,7 @@ namespace AmobaGame
                 if (matrix[segedsor + i, segedoszlop - i].Text == xo)
                 {
                     xoszama++;
-                    X.Add(segedsor + i);
-                    Y.Add(segedoszlop - i);
+                    koordinatak.Add(new NyeroKoordinatak(matrix[segedsor + i, segedoszlop - i].Name));
                     if (xoszama == 5)
                     {
                         return true;
@@ -257,8 +254,7 @@ namespace AmobaGame
                 else
                 {
                     xoszama = 0;
-                    X.Clear();
-                    Y.Clear();
+                    koordinatak.Clear();
                 }
             }
             return false;
@@ -271,8 +267,7 @@ namespace AmobaGame
                 if (matrix[segedsor + i, segedoszlop + i].Text == xo)
                 {
                     xoszama++;
-                    X.Add(segedsor+i);
-                    Y.Add(segedoszlop+i);
+                    koordinatak.Add(new NyeroKoordinatak(matrix[segedsor + i, segedoszlop + i].Name));
                     if (xoszama == 5)
                     {
                         return true;
@@ -280,8 +275,7 @@ namespace AmobaGame
                 }
                 else
                 {
-                    X.Clear();
-                    Y.Clear();
+                    koordinatak.Clear();
                     xoszama = 0;
 
                 }
