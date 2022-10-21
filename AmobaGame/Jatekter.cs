@@ -306,7 +306,6 @@ namespace AmobaGame
                 {
                     koordinatak.Clear();
                     xoszama = 0;
-
                 }
             }
             return false;
