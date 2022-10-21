@@ -109,7 +109,6 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
                         Nyert();
-                        MessageBox.Show("Nyertél X");
                         DialogResult valasz = MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         TovabbJatszik(valasz);
                     }
@@ -124,7 +123,6 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
                         Nyert();
-                        MessageBox.Show("Nyertél O");
                         DialogResult valasz = MessageBox.Show(player2 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         TovabbJatszik(valasz);
                     }
