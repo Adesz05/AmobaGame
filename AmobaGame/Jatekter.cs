@@ -283,6 +283,14 @@ namespace AmobaGame
             return false;
         }
 
+        private void pirosFeladas_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void kekFeladas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

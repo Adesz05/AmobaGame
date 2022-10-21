@@ -72,6 +72,7 @@ namespace AmobaGame
             this.pirosFeladas.TabIndex = 6;
             this.pirosFeladas.Text = "Feladás";
             this.pirosFeladas.UseVisualStyleBackColor = true;
+            this.pirosFeladas.Click += new System.EventHandler(this.pirosFeladas_Click);
             // 
             // kekFeladas
             // 
@@ -81,6 +82,7 @@ namespace AmobaGame
             this.kekFeladas.TabIndex = 7;
             this.kekFeladas.Text = "Feladás";
             this.kekFeladas.UseVisualStyleBackColor = true;
+            this.kekFeladas.Click += new System.EventHandler(this.kekFeladas_Click);
             // 
             // pirosAmong
             // 
