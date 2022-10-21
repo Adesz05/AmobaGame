@@ -1,16 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AmobaGame
 {
     public partial class Jatekter : Form
     {
+
         static int meret = 25;
         static int KiJon = 0;
         static Label[,] matrix = new Label[meret, meret];
         static string player1;
         static string player2;
+
+        static List<int> X = new List<int>();
+        static List<int> Y = new List<int>();
 
         public Jatekter(string Player1, string Player2)
         {
@@ -88,6 +98,7 @@ namespace AmobaGame
                     klikkelt.ForeColor = Color.Red;
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
+                        Nyert();
                         MessageBox.Show("Nyertél X");
                         MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     }
@@ -101,10 +112,19 @@ namespace AmobaGame
                     klikkelt.ForeColor = Color.Blue;
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
+                        Nyert();
                         MessageBox.Show("Nyertél O");
                         MessageBox.Show(player1 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     }
                 }
+            }
+        }
+
+        private void Nyert()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                matrix[X[i], Y[i]].BackColor = Color.Black;
             }
         }
 
@@ -128,12 +148,15 @@ namespace AmobaGame
 
         private bool Ellenorzes(int sor, int oszlop, string xo)
         {
+            //vizszintes
             int xoszama = 0;
             for (int i = 0; i < meret; i++)
             {
                 if (matrix[sor, i].Text == xo)
                 {
                     xoszama++;
+                    X.Add(sor);
+                    Y.Add(i);
                     if (xoszama == 5)
                     {
                         return true;
@@ -142,6 +165,8 @@ namespace AmobaGame
                 else
                 {
                     xoszama = 0;
+                    X.Clear();
+                    Y.Clear();
                 }
 
             }
@@ -152,6 +177,8 @@ namespace AmobaGame
                 if (matrix[i, oszlop].Text == xo)
                 {
                     xoszama++;
+                    X.Add(i);
+                    Y.Add(oszlop);
                     if (xoszama == 5)
                     {
                         return true;
@@ -160,6 +187,8 @@ namespace AmobaGame
                 else
                 {
                     xoszama = 0;
+                    X.Clear();
+                    Y.Clear();
                 }
             }
             //atlo1
@@ -216,6 +245,8 @@ namespace AmobaGame
                 if (matrix[segedsor + i, segedoszlop - i].Text == xo)
                 {
                     xoszama++;
+                    X.Add(segedsor + i);
+                    Y.Add(segedoszlop - i);
                     if (xoszama == 5)
                     {
                         return true;
@@ -224,6 +255,8 @@ namespace AmobaGame
                 else
                 {
                     xoszama = 0;
+                    X.Clear();
+                    Y.Clear();
                 }
             }
             return false;
@@ -236,6 +269,8 @@ namespace AmobaGame
                 if (matrix[segedsor + i, segedoszlop + i].Text == xo)
                 {
                     xoszama++;
+                    X.Add(segedsor+i);
+                    Y.Add(segedoszlop+i);
                     if (xoszama == 5)
                     {
                         return true;
@@ -243,7 +278,10 @@ namespace AmobaGame
                 }
                 else
                 {
+                    X.Clear();
+                    Y.Clear();
                     xoszama = 0;
+
                 }
             }
             return false;
