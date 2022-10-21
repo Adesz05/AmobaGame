@@ -16,8 +16,8 @@ namespace AmobaGame
         static int meret = 25;
         static int KiJon = 0;
         static Label[,] matrix = new Label[meret, meret];
-        static string player1;
-        static string player2;
+        static Player player1;
+        static Player player2;
         static List<NyeroKoordinatak> koordinatak = new List<NyeroKoordinatak>();
 
         public Jatekter(string Player1, string Player2)
@@ -25,8 +25,8 @@ namespace AmobaGame
             MatrixGeneralas();
             InitializeComponent();
             Xjon();
-            player1 = Player1;
-            player2 = Player2;
+            player1 = new Player(Player1,0);
+            player2 = new Player(Player2,1);
             Nevek();
         }
 
@@ -40,32 +40,28 @@ namespace AmobaGame
         {
             Random r = new Random();
             int r1 = r.Next(1, 3);
+            MessageBox.Show(r1.ToString());
             if (r1 == 1)
             {
-                label1.Text = player1;
-                label1.Text = player2;
+                label1.Text = player1.Nev;
+                label2.Text = player2.Nev;
             }
             else
             {
-                label1.Text = player2;
-                label2.Text = player1;
+                label1.Text = player2.Nev;
+                label2.Text = player1.Nev;
             }
-            if (player1.ToLower()=="cica" || player1.ToLower() == "cicuska" || player1.ToLower() == "cicamica" || player1.ToLower() == "ciculi" || player1.ToLower() == "macsek")
+            if (player1.Nev.ToLower()=="cica" || player1.Nev.ToLower() == "cicuska" || player1.Nev.ToLower() == "cicamica" || player1.Nev.ToLower() == "ciculi" || player1.Nev.ToLower() == "macsek")
             {
-                label1.Text = player1;
-                if (player2.Length == 0) player2 = "Player2";
-                label2.Text = player2;
+                label1.Text = player1.Nev;
+                if (player2.Nev.Length == 0) player2.Nev = "Player2";
+                label2.Text = player2.Nev;
             }
-            else if (player2.ToLower() == "cica" || player2.ToLower() == "cicuska" || player2.ToLower() == "cicamica" || player2.ToLower() == "ciculi" || player2.ToLower() == "macsek")
+            else if (player2.Nev.ToLower() == "cica" || player2.Nev.ToLower() == "cicuska" || player2.Nev.ToLower() == "cicamica" || player2.Nev.ToLower() == "ciculi" || player2.Nev.ToLower() == "macsek")
             {
-                label1.Text = player2;
-                if (player1.Length == 0) player1 = "Player1";
-                label2.Text = player1;
-            }
-            else
-            {
-                label1.Text = player1;
-                label2.Text = player2;
+                label1.Text = player2.Nev;
+                if (player1.Nev.Length == 0) player1.Nev = "Player1";
+                label2.Text = player1.Nev;
             }
                 label1.TextAlign = ContentAlignment.MiddleCenter;
                 label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -109,7 +105,7 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
                         Nyert();
-                        DialogResult valasz = MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult valasz = MessageBox.Show(player1.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         TovabbJatszik(valasz);
                     }
                 }
@@ -134,7 +130,7 @@ namespace AmobaGame
         {
             if (valasz == DialogResult.Yes)
             {
-                Jatekter jatekter = new Jatekter(player1, player2);
+                Jatekter jatekter = new Jatekter(player1.Nev, player2.Nev);
                 this.Visible = false;
                 jatekter.ShowDialog();
                 KiJon = 0;
