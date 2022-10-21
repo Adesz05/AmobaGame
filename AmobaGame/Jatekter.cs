@@ -130,18 +130,20 @@ namespace AmobaGame
 
         private void Ojon()
         {
-            panel1.BackColor = Color.FromArgb(255, Color.White);
-            panel2.BackColor = Color.FromArgb(0, Color.Black);
-            label2.BringToFront();
+            pirosAmong.Visible = false;
+            kekAmong.Visible = true;
+            kekKor.Visible = true;
+            pirosX.Visible = false;
             label1.Visible = false;
             label2.Visible = true;
         }
 
         private void Xjon()
         {
-            panel1.BackColor = Color.FromArgb(0, Color.Black);
-            panel2.BackColor = Color.FromArgb(255, Color.White);
-            label1.BringToFront();
+            pirosAmong.Visible = true;
+            kekAmong.Visible = false;
+            kekKor.Visible = false;
+            pirosX.Visible = true;
             label1.Visible = true;
             label2.Visible = false;
         }
@@ -286,5 +288,7 @@ namespace AmobaGame
             }
             return false;
         }
+
+
     }
 }
