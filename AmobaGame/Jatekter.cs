@@ -9,21 +9,26 @@ namespace AmobaGame
         static int meret = 25;
         static int KiJon = 0;
         static Label[,] matrix = new Label[meret, meret];
-        public Jatekter(string player1, string player2)
+        static string player1;
+        static string player2;
+
+        public Jatekter(string Player1, string Player2)
         {
             MatrixGeneralas();
             InitializeComponent();
             Xjon();
-            Nevek(player1, player2);
+            player1 = Player1;
+            player2 = Player2;
+            Nevek();
         }
 
 
-        private void Nevek(string player1, string player2)
+        private void Nevek()
         {
-            RandomKezdes(player1, player2);
+            RandomKezdes();
         }
 
-        private void RandomKezdes(string player1, string player2)
+        private void RandomKezdes()
         {
             if (player1.ToLower()=="cica" || player1.ToLower() == "cicuska" || player1.ToLower() == "cicamica" || player1.ToLower() == "ciculi" || player1.ToLower() == "macsek")
             {
@@ -84,6 +89,7 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
                         MessageBox.Show("Nyertél X");
+                        MessageBox.Show(player1+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     }
                 }
                 else
@@ -96,6 +102,7 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
                         MessageBox.Show("Nyertél O");
+                        MessageBox.Show(player1 + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     }
                 }
             }
