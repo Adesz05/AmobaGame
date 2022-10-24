@@ -50,7 +50,7 @@ namespace AmobaGame
             // 
             this.XLabel.AutoSize = true;
             this.XLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.XLabel.Location = new System.Drawing.Point(-1, 398);
+            this.XLabel.Location = new System.Drawing.Point(4, 398);
             this.XLabel.MinimumSize = new System.Drawing.Size(180, 30);
             this.XLabel.Name = "XLabel";
             this.XLabel.Size = new System.Drawing.Size(180, 30);
@@ -68,22 +68,29 @@ namespace AmobaGame
             // 
             // pirosFeladas
             // 
-            this.pirosFeladas.Location = new System.Drawing.Point(31, 240);
+            this.pirosFeladas.BackColor = System.Drawing.Color.CadetBlue;
+            this.pirosFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pirosFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pirosFeladas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pirosFeladas.Location = new System.Drawing.Point(22, 253);
             this.pirosFeladas.Name = "pirosFeladas";
             this.pirosFeladas.Size = new System.Drawing.Size(148, 45);
             this.pirosFeladas.TabIndex = 6;
             this.pirosFeladas.Text = "Feladás";
-            this.pirosFeladas.UseVisualStyleBackColor = true;
+            this.pirosFeladas.UseVisualStyleBackColor = false;
             this.pirosFeladas.Click += new System.EventHandler(this.pirosFeladas_Click);
             // 
             // kekFeladas
             // 
-            this.kekFeladas.Location = new System.Drawing.Point(834, 240);
+            this.kekFeladas.BackColor = System.Drawing.Color.CadetBlue;
+            this.kekFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.kekFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kekFeladas.Location = new System.Drawing.Point(849, 253);
             this.kekFeladas.Name = "kekFeladas";
             this.kekFeladas.Size = new System.Drawing.Size(148, 45);
             this.kekFeladas.TabIndex = 7;
             this.kekFeladas.Text = "Feladás";
-            this.kekFeladas.UseVisualStyleBackColor = true;
+            this.kekFeladas.UseVisualStyleBackColor = false;
             this.kekFeladas.Click += new System.EventHandler(this.kekFeladas_Click);
             // 
             // pirosAmong
@@ -150,6 +157,7 @@ namespace AmobaGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 641);
             this.Controls.Add(this.Opontszam);
             this.Controls.Add(this.Xpontszam);
