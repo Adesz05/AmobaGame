@@ -44,7 +44,6 @@ namespace AmobaGame
         private void RandomKezdes()
         {
             futasokSzama++;
-            MessageBox.Show(futasokSzama.ToString());
             Random r = new Random();
             int r1 = r.Next(1, 3);
             //MessageBox.Show(r1.ToString());
