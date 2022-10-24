@@ -48,7 +48,7 @@ namespace AmobaGame
             // 
             this.XLabel.AutoSize = true;
             this.XLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.XLabel.Location = new System.Drawing.Point(-1, 398);
+            this.XLabel.Location = new System.Drawing.Point(4, 398);
             this.XLabel.MinimumSize = new System.Drawing.Size(180, 30);
             this.XLabel.Name = "XLabel";
             this.XLabel.Size = new System.Drawing.Size(180, 30);
@@ -66,7 +66,7 @@ namespace AmobaGame
             // 
             // pirosFeladas
             // 
-            this.pirosFeladas.Location = new System.Drawing.Point(31, 240);
+            this.pirosFeladas.Location = new System.Drawing.Point(22, 253);
             this.pirosFeladas.Name = "pirosFeladas";
             this.pirosFeladas.Size = new System.Drawing.Size(148, 45);
             this.pirosFeladas.TabIndex = 6;
@@ -76,7 +76,7 @@ namespace AmobaGame
             // 
             // kekFeladas
             // 
-            this.kekFeladas.Location = new System.Drawing.Point(834, 240);
+            this.kekFeladas.Location = new System.Drawing.Point(849, 253);
             this.kekFeladas.Name = "kekFeladas";
             this.kekFeladas.Size = new System.Drawing.Size(148, 45);
             this.kekFeladas.TabIndex = 7;
