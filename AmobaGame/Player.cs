@@ -9,9 +9,9 @@ namespace AmobaGame
     class Player
     {
         public string Nev;
-        public int MivelVan;
+        public char MivelVan;
 
-        public Player(string nev, int mivelvan)
+        public Player(string nev, char mivelvan)
         {
             Nev = nev;
             MivelVan = mivelvan;

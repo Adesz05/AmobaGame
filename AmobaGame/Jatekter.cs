@@ -25,11 +25,11 @@ namespace AmobaGame
         {
             MatrixGeneralas();
             InitializeComponent();
-            //Xjon();
+            Xjon();
             if (futasokSzama<1)
             {
-            player1 = new Player(Player1,0);
-            player2 = new Player(Player2,1);
+            player1 = new Player(Player1,'X');
+            player2 = new Player(Player2,'O');
             }
             Nevek();
         }
@@ -43,7 +43,7 @@ namespace AmobaGame
             }
             else
             {
-                if (player1.MivelVan==0)
+                if (player1.MivelVan=='X')
                 {
                     XLabel.Text = player1.Nev;
                     OLabel.Text = player2.Nev;
@@ -69,15 +69,15 @@ namespace AmobaGame
             {
                 XLabel.Text = player1.Nev;
                 OLabel.Text = player2.Nev;
-                player1.MivelVan = 0;
-                player2.MivelVan = 1;
+                player1.MivelVan = 'X';
+                player2.MivelVan = 'O';
             }
             else
             {
                 XLabel.Text = player2.Nev;
                 OLabel.Text = player1.Nev;
-                player1.MivelVan = 1;
-                player2.MivelVan = 0;
+                player1.MivelVan = 'O';
+                player2.MivelVan = 'X';
             }
                 XLabel.TextAlign = ContentAlignment.MiddleCenter;
                 OLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -114,7 +114,7 @@ namespace AmobaGame
             {
                 if (KiJon == 0)
                 {
-                    //Ojon();
+                    Ojon();
                     klikkelt.Text = "X";
                     KiJon = 1;
                     klikkelt.ForeColor = Color.Red;
@@ -122,14 +122,12 @@ namespace AmobaGame
                     {
                         DialogResult valasz;
                         NyeroOtosSzinezes();
-                        if (player1.MivelVan==0)
+                        if (player1.MivelVan=='X')
                         {
-                            MessageBox.Show(player1.MivelVan.ToString());
                         valasz = MessageBox.Show(player1.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
                         else
                         {
-                            MessageBox.Show(player1.MivelVan.ToString());
                         valasz = MessageBox.Show(player2.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
 
@@ -140,7 +138,7 @@ namespace AmobaGame
                 else
                 {
             
-                    //Xjon();
+                    Xjon();
                     klikkelt.Text = "O";
                     KiJon = 0;
                     klikkelt.ForeColor = Color.Blue;
@@ -148,7 +146,7 @@ namespace AmobaGame
                     {
                         NyeroOtosSzinezes();
                         DialogResult valasz;
-                        if (player1.MivelVan == 1)
+                        if (player1.MivelVan == 'O')
                         {
                             valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
@@ -166,11 +164,11 @@ namespace AmobaGame
         {
             if (valasz == DialogResult.Yes)
             {
-                Jatekter jatekter = new Jatekter(player1.Nev, player2.Nev);
+                char seged = player1.MivelVan;
+                player1.MivelVan = player2.MivelVan;
+                player2.MivelVan = seged;
                 KiJon = 0;
-                //int seged = player1.MivelVan;
-                //player1.MivelVan = player2.MivelVan;
-                //player2.MivelVan = seged;
+                Jatekter jatekter = new Jatekter(player1.Nev, player2.Nev);
                 this.Visible = false;
                 jatekter.ShowDialog();
                 Close();
@@ -347,7 +345,7 @@ namespace AmobaGame
 
         private void pirosFeladas_Click(object sender, EventArgs e)
         {
-            if (player1.MivelVan==0)
+            if (player1.MivelVan== 'X')
             {
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
@@ -362,7 +360,7 @@ namespace AmobaGame
 
         private void kekFeladas_Click(object sender, EventArgs e)
         {
-            if (player1.MivelVan == 1)
+            if (player1.MivelVan == 'O')
             {
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
