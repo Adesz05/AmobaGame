@@ -137,6 +137,7 @@ namespace AmobaGame
             this.Controls.Add(this.pirosFeladas);
             this.Controls.Add(this.OLabel);
             this.Controls.Add(this.XLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1025, 680);
             this.MinimumSize = new System.Drawing.Size(1025, 680);
             this.Name = "Jatekter";
