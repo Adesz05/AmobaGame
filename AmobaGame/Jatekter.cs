@@ -42,13 +42,13 @@ namespace AmobaGame
             {
                 if (player1.MivelVan==0)
                 {
-                    label1.Text = player1.Nev;
-                    label2.Text = player2.Nev;
+                    XLabel.Text = player1.Nev;
+                    OLabel.Text = player2.Nev;
                 }
                 else
                 {
-                    label2.Text = player1.Nev;
-                    label1.Text = player2.Nev;
+                    OLabel.Text = player1.Nev;
+                    XLabel.Text = player2.Nev;
                 }
 
             }
@@ -60,31 +60,22 @@ namespace AmobaGame
             futasokSzama++;
             Random r = new Random();
             int r1 = r.Next(1, 3);
-            //MessageBox.Show(r1.ToString());
             if (r1 == 1)
             {
-                label1.Text = player1.Nev;
-                label2.Text = player2.Nev;
+                XLabel.Text = player1.Nev;
+                OLabel.Text = player2.Nev;
+                player1.MivelVan = 0;
+                player2.MivelVan = 1;
             }
             else
             {
-                label1.Text = player2.Nev;
-                label2.Text = player1.Nev;
+                XLabel.Text = player2.Nev;
+                OLabel.Text = player1.Nev;
+                player1.MivelVan = 1;
+                player2.MivelVan = 0;
             }
-            if (player1.Nev.ToLower()=="cica" || player1.Nev.ToLower() == "cicuska" || player1.Nev.ToLower() == "cicamica" || player1.Nev.ToLower() == "ciculi" || player1.Nev.ToLower() == "macsek")
-            {
-                label1.Text = player1.Nev;
-                if (player2.Nev.Length == 0) player2.Nev = "Player2";
-                label2.Text = player2.Nev;
-            }
-            else if (player2.Nev.ToLower() == "cica" || player2.Nev.ToLower() == "cicuska" || player2.Nev.ToLower() == "cicamica" || player2.Nev.ToLower() == "ciculi" || player2.Nev.ToLower() == "macsek")
-            {
-                label1.Text = player2.Nev;
-                if (player1.Nev.Length == 0) player1.Nev = "Player1";
-                label2.Text = player1.Nev;
-            }
-                label1.TextAlign = ContentAlignment.MiddleCenter;
-                label2.TextAlign = ContentAlignment.MiddleCenter;
+                XLabel.TextAlign = ContentAlignment.MiddleCenter;
+                OLabel.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void MatrixGeneralas()
@@ -125,13 +116,15 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
                         DialogResult valasz;
-                        Nyert();
+                        NyeroOtosSzinezes();
                         if (player1.MivelVan==0)
                         {
+                            MessageBox.Show(player1.MivelVan.ToString());
                         valasz = MessageBox.Show(player1.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
                         else
                         {
+                            MessageBox.Show(player1.MivelVan.ToString());
                         valasz = MessageBox.Show(player2.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
 
@@ -148,7 +141,7 @@ namespace AmobaGame
                     klikkelt.ForeColor = Color.Blue;
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
-                        Nyert();
+                        NyeroOtosSzinezes();
                         DialogResult valasz;
                         if (player1.MivelVan == 1)
                         {
@@ -183,7 +176,7 @@ namespace AmobaGame
             }
         }
 
-        private void Nyert()
+        private void NyeroOtosSzinezes()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -198,8 +191,8 @@ namespace AmobaGame
             kekAmong.Visible = true;
             kekKor.Visible = true;
             pirosX.Visible = false;
-            label1.Visible = false;
-            label2.Visible = true;
+            XLabel.Visible = false;
+            OLabel.Visible = true;
             kekFeladas.Visible = true;
             pirosFeladas.Visible = false;
         }
@@ -210,8 +203,8 @@ namespace AmobaGame
             kekAmong.Visible = false;
             kekKor.Visible = false;
             pirosX.Visible = true;
-            label1.Visible = true;
-            label2.Visible = false;
+            XLabel.Visible = true;
+            OLabel.Visible = false;
             kekFeladas.Visible = false;
             pirosFeladas.Visible = true;
         }

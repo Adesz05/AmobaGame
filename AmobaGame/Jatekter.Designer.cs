@@ -30,8 +30,8 @@ namespace AmobaGame
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jatekter));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.XLabel = new System.Windows.Forms.Label();
+            this.OLabel = new System.Windows.Forms.Label();
             this.pirosFeladas = new System.Windows.Forms.Button();
             this.kekFeladas = new System.Windows.Forms.Button();
             this.pirosAmong = new System.Windows.Forms.PictureBox();
@@ -44,25 +44,25 @@ namespace AmobaGame
             ((System.ComponentModel.ISupportInitialize)(this.kekKor)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // XLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(-1, 398);
-            this.label1.MinimumSize = new System.Drawing.Size(180, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 30);
-            this.label1.TabIndex = 2;
+            this.XLabel.AutoSize = true;
+            this.XLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.XLabel.Location = new System.Drawing.Point(-1, 398);
+            this.XLabel.MinimumSize = new System.Drawing.Size(180, 30);
+            this.XLabel.Name = "XLabel";
+            this.XLabel.Size = new System.Drawing.Size(180, 30);
+            this.XLabel.TabIndex = 2;
             // 
-            // label2
+            // OLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(829, 381);
-            this.label2.MinimumSize = new System.Drawing.Size(180, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 30);
-            this.label2.TabIndex = 3;
+            this.OLabel.AutoSize = true;
+            this.OLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.OLabel.Location = new System.Drawing.Point(829, 381);
+            this.OLabel.MinimumSize = new System.Drawing.Size(180, 30);
+            this.OLabel.Name = "OLabel";
+            this.OLabel.Size = new System.Drawing.Size(180, 30);
+            this.OLabel.TabIndex = 3;
             // 
             // pirosFeladas
             // 
@@ -135,8 +135,8 @@ namespace AmobaGame
             this.Controls.Add(this.pirosAmong);
             this.Controls.Add(this.kekFeladas);
             this.Controls.Add(this.pirosFeladas);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.OLabel);
+            this.Controls.Add(this.XLabel);
             this.MaximumSize = new System.Drawing.Size(1025, 680);
             this.MinimumSize = new System.Drawing.Size(1025, 680);
             this.Name = "Jatekter";
@@ -151,8 +151,8 @@ namespace AmobaGame
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label XLabel;
+        private System.Windows.Forms.Label OLabel;
         private System.Windows.Forms.Button pirosFeladas;
         private System.Windows.Forms.Button kekFeladas;
         private System.Windows.Forms.PictureBox pirosAmong;
