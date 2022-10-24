@@ -89,7 +89,19 @@ namespace AmobaGame
                 player1.MivelVan = 'O';
                 player2.MivelVan = 'X';
             }
-                XLabel.TextAlign = ContentAlignment.MiddleCenter;
+            if (player1.Nev.ToLower() == "cica" || player1.Nev.ToLower() == "cicuska" || player1.Nev.ToLower() == "cicamica" || player1.Nev.ToLower() == "ciculi" || player1.Nev.ToLower() == "macsek")
+            {
+                XLabel.Text = player1.Nev;
+                if (player2.Nev.Length == 0) player2.Nev = "Player2";
+                OLabel.Text = player2.Nev;
+            }
+            else if (player2.Nev.ToLower() == "cica" || player2.Nev.ToLower() == "cicuska" || player2.Nev.ToLower() == "cicamica" || player2.Nev.ToLower() == "ciculi" || player2.Nev.ToLower() == "macsek")
+            {
+                XLabel.Text = player2.Nev;
+                if (player1.Nev.Length == 0) player1.Nev = "Player1";
+                OLabel.Text = player1.Nev;
+            }
+            XLabel.TextAlign = ContentAlignment.MiddleCenter;
                 OLabel.TextAlign = ContentAlignment.MiddleCenter;
             Xpontszam.TextAlign = ContentAlignment.MiddleCenter;
             Opontszam.TextAlign = ContentAlignment.MiddleCenter;
