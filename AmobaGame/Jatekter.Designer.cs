@@ -58,7 +58,7 @@ namespace AmobaGame
             // 
             this.OLabel.AutoSize = true;
             this.OLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.OLabel.Location = new System.Drawing.Point(829, 381);
+            this.OLabel.Location = new System.Drawing.Point(829, 398);
             this.OLabel.MinimumSize = new System.Drawing.Size(180, 30);
             this.OLabel.Name = "OLabel";
             this.OLabel.Size = new System.Drawing.Size(180, 30);
