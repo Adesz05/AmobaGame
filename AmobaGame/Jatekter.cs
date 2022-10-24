@@ -130,8 +130,6 @@ namespace AmobaGame
                         {
                         valasz = MessageBox.Show(player2.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
-
-
                         TovabbJatszik(valasz);
                     }
                 }
