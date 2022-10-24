@@ -38,6 +38,8 @@ namespace AmobaGame
             this.kekAmong = new System.Windows.Forms.PictureBox();
             this.pirosX = new System.Windows.Forms.PictureBox();
             this.kekKor = new System.Windows.Forms.PictureBox();
+            this.Xpontszam = new System.Windows.Forms.Label();
+            this.Opontszam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pirosAmong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kekAmong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pirosX)).BeginInit();
@@ -124,11 +126,33 @@ namespace AmobaGame
             this.kekKor.TabIndex = 11;
             this.kekKor.TabStop = false;
             // 
+            // Xpontszam
+            // 
+            this.Xpontszam.AutoSize = true;
+            this.Xpontszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Xpontszam.Location = new System.Drawing.Point(-1, 351);
+            this.Xpontszam.MinimumSize = new System.Drawing.Size(180, 30);
+            this.Xpontszam.Name = "Xpontszam";
+            this.Xpontszam.Size = new System.Drawing.Size(180, 30);
+            this.Xpontszam.TabIndex = 12;
+            // 
+            // Opontszam
+            // 
+            this.Opontszam.AutoSize = true;
+            this.Opontszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Opontszam.Location = new System.Drawing.Point(829, 351);
+            this.Opontszam.MinimumSize = new System.Drawing.Size(180, 30);
+            this.Opontszam.Name = "Opontszam";
+            this.Opontszam.Size = new System.Drawing.Size(180, 30);
+            this.Opontszam.TabIndex = 13;
+            // 
             // Jatekter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 641);
+            this.Controls.Add(this.Opontszam);
+            this.Controls.Add(this.Xpontszam);
             this.Controls.Add(this.kekKor);
             this.Controls.Add(this.pirosX);
             this.Controls.Add(this.kekAmong);
@@ -141,7 +165,7 @@ namespace AmobaGame
             this.MaximumSize = new System.Drawing.Size(1025, 680);
             this.MinimumSize = new System.Drawing.Size(1025, 680);
             this.Name = "Jatekter";
-            this.Text = "Jatekter";
+            this.Text = "AmobaGame";
             ((System.ComponentModel.ISupportInitialize)(this.pirosAmong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kekAmong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pirosX)).EndInit();
@@ -160,5 +184,7 @@ namespace AmobaGame
         private System.Windows.Forms.PictureBox kekAmong;
         private System.Windows.Forms.PictureBox pirosX;
         private System.Windows.Forms.PictureBox kekKor;
+        private System.Windows.Forms.Label Xpontszam;
+        private System.Windows.Forms.Label Opontszam;
     }
 }

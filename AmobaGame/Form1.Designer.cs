@@ -136,7 +136,7 @@ namespace AmobaGame
             this.MaximumSize = new System.Drawing.Size(816, 489);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Form1";
-            this.Text = "Játék";
+            this.Text = "Új Játék";
             this.ResumeLayout(false);
             this.PerformLayout();
 

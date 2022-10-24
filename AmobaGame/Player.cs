@@ -10,11 +10,13 @@ namespace AmobaGame
     {
         public string Nev;
         public char MivelVan;
+        public int Pontszam;
 
-        public Player(string nev, char mivelvan)
+        public Player(string nev, char mivelvan, int pontszam)
         {
             Nev = nev;
             MivelVan = mivelvan;
+            Pontszam = pontszam;
         }
     }
 }

@@ -28,12 +28,11 @@ namespace AmobaGame
             Xjon();
             if (futasokSzama<1)
             {
-            player1 = new Player(Player1,'X');
-            player2 = new Player(Player2,'O');
+            player1 = new Player(Player1,'X',0);
+            player2 = new Player(Player2,'O',0);
             }
             Nevek();
         }
-
 
         private void Nevek()
         {
@@ -47,14 +46,21 @@ namespace AmobaGame
                 {
                     XLabel.Text = player1.Nev;
                     OLabel.Text = player2.Nev;
+                    Xpontszam.Text = "Győzelmek: "+player1.Pontszam.ToString();
+                    Opontszam.Text = "Győzelmek: "+player2.Pontszam.ToString();
+                    
                 }
                 else
                 {
                     OLabel.Text = player1.Nev;
                     XLabel.Text = player2.Nev;
+                    Xpontszam.Text = "Győzelmek: "+player2.Pontszam.ToString();
+                    Opontszam.Text = "Győzelmek: "+player1.Pontszam.ToString();
                 }
                 XLabel.TextAlign = ContentAlignment.MiddleCenter;
                 OLabel.TextAlign = ContentAlignment.MiddleCenter;
+                Xpontszam.TextAlign = ContentAlignment.MiddleCenter;
+                Opontszam.TextAlign = ContentAlignment.MiddleCenter;
 
             }
             futasokSzama++;
@@ -71,16 +77,22 @@ namespace AmobaGame
                 OLabel.Text = player2.Nev;
                 player1.MivelVan = 'X';
                 player2.MivelVan = 'O';
+                Xpontszam.Text = "Győzelmek: "+player2.Pontszam.ToString();
+                Opontszam.Text = "Győzelmek: "+player1.Pontszam.ToString();
             }
             else
             {
                 XLabel.Text = player2.Nev;
                 OLabel.Text = player1.Nev;
+                Xpontszam.Text = "Győzelmek: "+player1.Pontszam.ToString();
+                Opontszam.Text = "Győzelmek: "+player2.Pontszam.ToString();
                 player1.MivelVan = 'O';
                 player2.MivelVan = 'X';
             }
                 XLabel.TextAlign = ContentAlignment.MiddleCenter;
                 OLabel.TextAlign = ContentAlignment.MiddleCenter;
+            Xpontszam.TextAlign = ContentAlignment.MiddleCenter;
+            Opontszam.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void MatrixGeneralas()
@@ -123,10 +135,12 @@ namespace AmobaGame
                         NyeroOtosSzinezes();
                         if (player1.MivelVan=='X')
                         {
+                            player1.Pontszam++;
                         valasz = MessageBox.Show(player1.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
                         else
                         {
+                            player2.Pontszam++;
                         valasz = MessageBox.Show(player2.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
                         TovabbJatszik(valasz);
@@ -144,10 +158,12 @@ namespace AmobaGame
                         DialogResult valasz;
                         if (player1.MivelVan == 'O')
                         {
+                            player1.Pontszam++;
                             valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
                         else
                         {
+                            player2.Pontszam++;
                             valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         }
                         TovabbJatszik(valasz);
@@ -187,6 +203,8 @@ namespace AmobaGame
         {
             pirosAmong.Visible = false;
             kekAmong.Visible = true;
+            Opontszam.Visible = true;
+            Xpontszam.Visible = false;
             kekKor.Visible = true;
             pirosX.Visible = false;
             XLabel.Visible = false;
@@ -199,6 +217,8 @@ namespace AmobaGame
         {
             pirosAmong.Visible = true;
             kekAmong.Visible = false;
+            Opontszam.Visible = false;
+            Xpontszam.Visible = true;
             kekKor.Visible = false;
             pirosX.Visible = true;
             XLabel.Visible = true;
@@ -343,11 +363,13 @@ namespace AmobaGame
         {
             if (player1.MivelVan== 'X')
             {
+                player2.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
             else
             {
+                player1.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
@@ -358,11 +380,13 @@ namespace AmobaGame
         {
             if (player1.MivelVan == 'O')
             {
+                player2.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
             else
             {
+                player1.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
