@@ -38,6 +38,20 @@ namespace AmobaGame
             {
             RandomKezdes();
             }
+            else
+            {
+                if (player1.MivelVan==0)
+                {
+                    label1.Text = player1.Nev;
+                    label2.Text = player2.Nev;
+                }
+                else
+                {
+                    label2.Text = player1.Nev;
+                    label1.Text = player2.Nev;
+                }
+
+            }
 
         }
 
@@ -110,8 +124,18 @@ namespace AmobaGame
                     klikkelt.ForeColor = Color.Red;
                     if (Ellenorzes(sor, oszlop, "X"))
                     {
+                        DialogResult valasz;
                         Nyert();
-                        DialogResult valasz = MessageBox.Show(player1.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (player1.MivelVan==0)
+                        {
+                        valasz = MessageBox.Show(player1.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        }
+                        else
+                        {
+                        valasz = MessageBox.Show(player2.Nev+" Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        }
+
+
                         TovabbJatszik(valasz);
                     }
                 }
@@ -125,7 +149,15 @@ namespace AmobaGame
                     if (Ellenorzes(sor, oszlop, "O"))
                     {
                         Nyert();
-                        DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult valasz;
+                        if (player1.MivelVan == 1)
+                        {
+                            valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        }
+                        else
+                        {
+                            valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        }
                         TovabbJatszik(valasz);
                     }
                 }
@@ -137,6 +169,9 @@ namespace AmobaGame
             if (valasz == DialogResult.Yes)
             {
                 Jatekter jatekter = new Jatekter(player1.Nev, player2.Nev);
+                int seged = player1.MivelVan;
+                player1.MivelVan = player2.MivelVan;
+                player2.MivelVan = seged;
                 this.Visible = false;
                 jatekter.ShowDialog();
                 KiJon = 0;
